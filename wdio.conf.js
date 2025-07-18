@@ -60,7 +60,7 @@ exports.config = {
         'appium:deviceName': 'Pixel 6',
         'appium:platformVersion': '14.0',
         'appium:automationName': 'UiAutomator2',
-        'appium:app': path.join(process.cwd(), 'App/Android/ApiDemos-debug.apk'),
+        'appium:app': path.join(process.cwd(), 'App/Android/ColorNote+Notepad.apk'),
     }],
 
     //
