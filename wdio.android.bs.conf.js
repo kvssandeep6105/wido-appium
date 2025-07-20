@@ -1,16 +1,15 @@
 const path = require('path');
+require('dotenv').config()
 
-
+config.user = process.env.BROWSERSTACK_USERNAME ; 
+config.key = process.env.BROWSERSTACK_ACCESS_KEY ;
 exports.config = {
     //
     // ====================
     // Runner Configuration
     // ====================
     // WebdriverIO supports running e2e tests as well as unit and component tests.
-    runner: 'local',
-    port: 4723,
-    relaxedSecurity: true,
-    //
+
     // ==================
     // Specify Test Files
     // ==================
@@ -58,14 +57,13 @@ exports.config = {
     capabilities: [{
         // capabilities for local Appium web tests on an Android Emulator
         'appium:platformName': 'Android',
-        'appium:deviceName': 'Pixel 6',
-        'appium:platformVersion': '14.0',
+        'appium:deviceName': 'Google Pixel 7 Pro',
+        'appium:platformVersion': '13.0',
         'appium:automationName': 'UiAutomator2',
-        'appium:app': path.join(process.cwd(), 'App/Android/ColorNote+Notepad.apk'),
-        'appium:autoGrantPermissions': true,
-        'appium:chromedriverAutodownload': true,
-        
+        'appium:app': "bs://b0e296ad60cf92fcd460b368b8d824b1a5533c45",
     }],
+    services: ['browserstack'],
+       
 
     //
     // ===================
@@ -114,7 +112,7 @@ exports.config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: ['appium'],
+   
 
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
